@@ -1,9 +1,9 @@
-# Fees
+# Fees API
 
 Fees are service charges to the end-user. Vendors can configure 4 types of fees.
 
 1. Fixed fee
-2. Fee based on amount
+2. Fee based on amount - table and percentage
 3. Fee based on distance
 4. Conditional Fee to be charged based on payment_type
 
@@ -21,7 +21,7 @@ Example:
 
 Fees can be calculated using a simple rate table. In this example, fee is P100 (for order amount greater or eualt to 0); and for order amount greater than 1000, fee is P50. There is no limit to the number of row entries in the rate table.
 
-Example:
+Table Example:
 
 ```json5
 {   name: "Delivery Fee",
@@ -31,6 +31,14 @@ Example:
         {amount: 1000, fee 50}
     ]
 }
+```
+
+Percentage Example:
+
+Delivery fee will be calculated based on 3% of the total amount.
+
+```json5
+{ name: "Delivery Fee", code: "delivery", rates: 0.03 }
 ```
 
 ### 3. Fee based on Distance
