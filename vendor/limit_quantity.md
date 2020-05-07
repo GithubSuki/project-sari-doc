@@ -67,7 +67,7 @@ tag,limit
 
 # Vendor API
 
-## 1. Upload Limit for Products
+## Upload Limit for Products
 
 To upload `special_tags` and `limit` for products, we can
 use the same Products Upload API - `POST /api/uploads/products`.
@@ -77,14 +77,14 @@ You just need to submit a CSV file with the field name `file`.
 
 `Content-Type': 'multipart/form-data'`
 
-## 2. Upload Limit for Special Tags
+## Upload Limit for Special Tags
 
 To upload the limits for tags, you can use the job queue API (`/api/jobs/queue`).
 Just send the POST command with parameter `task` and attached CSV file.
 
 `POST /api/jobs/queue?task=upload_limits`
 
-## 3. GET Limit for Special Tags
+## GET Limit for Special Tags
 
 You will be able to retrieve the tag limits from this API.
 
@@ -92,7 +92,7 @@ You will be able to retrieve the tag limits from this API.
 
 # Customer API
 
-## 1. Fetching Vendor settings
+## Fetching Vendor settings
 
 `GET /c/api/vendors/{vendor_id}`
 
@@ -104,13 +104,13 @@ You will be able to retrieve the tag limits from this API.
 }
 ```
 
-## 2. Fetching Tag limits
+## Fetching Tag limits
 
 You will be able to retrieve the tag limits from this API.
 
 `GET /c/api/vendors/{vendor_id}/limits`
 
-## 3. Fetching product limits
+## Fetching product limits
 
 The product `limit` field is already included in the regular product fetch.
 
