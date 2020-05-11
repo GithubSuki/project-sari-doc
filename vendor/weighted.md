@@ -11,7 +11,7 @@ How to defined a weighted items or items with fractional value.
     price: 125,  // fixed price
     weight_info: {  // this is purely informational
         approx_weight: 1.4,
-        unit: "KG"
+        unit: "KG",
         price_per_unit: 89.28
     },
     quantity: 1,  // always whole number
@@ -31,7 +31,7 @@ While ordering:
     price: 125,  // initial
     weight_info: { // this is still information
         approx_weight: 1.4,
-        unit: "KG"
+        unit: "KG",
         price_per_unit: 89.28,
         variable: true;
     },
@@ -49,7 +49,7 @@ While picking, when actual actual weight is entered:
     price: 138.38,  // average price
     weight_info: {  // this is now used to as basic to compute final price when weight is entered
         approx_weight: 1.4,
-        unit: "KG"
+        unit: "KG",
         price_per_unit: 89.28,
         variable: true;
     },
