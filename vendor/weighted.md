@@ -22,6 +22,8 @@ How to defined a weighted items or items with fractional value.
 
 Final Price is calculated based on actual weight
 
+While ordering:
+
 ```json5
 {
     barcode: "1"
@@ -38,6 +40,8 @@ Final Price is calculated based on actual weight
 }
 ```
 
+While picking, when actual actual weight is entered:
+
 ```json5
 {
     barcode: "1"
@@ -50,7 +54,7 @@ Final Price is calculated based on actual weight
         variable: true;
     },
     quantity: 2, // always whole number
-    actual_weights: [1.4, 1.7],
+    actual_weights: [1.4, 1.7],  // input during picking
     weight: 3.1,
     subtotal: 276.77
 }
