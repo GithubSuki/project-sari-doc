@@ -61,13 +61,15 @@ Mobile App is responsible to present the weight info the to user. When downloadi
 
 Image 1. Below is sample screen showing how MetroMart App renders fixed price item.
 
-![Fixed Price](/images/weighted_fixed_price.jpg)
+![Fixed Price](/images/weighted_fixed_price.jpg =200x)
 
 #### Variable Price Item
 
 Image 2: Below is an example showing how Metromart App renders variable price item.
 
-![Variable Price](/images/weighted_variable_price.jpg)
+![Variable Price](/images/weighted_variable_price.jpg =200x)
+
+<img src="/images/weighted_variable_price.jpg" alt="var price"/>
 
 #### Submitting Order
 
