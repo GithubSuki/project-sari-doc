@@ -6,7 +6,7 @@ _By Victor Javier, May 14, 2020_
 
 Suki Commerce supports weighted items such as fresh produce in additional to regular items. User can store weight information such as `approx_weight`, `unit_in_weight`, and `price_per_unit`.
 
-There are two type of weighted items. One that has fixed price, and another price based on actual weight during picking.
+There are two type of weighted items. One is fixed price, and the other is variable price based on actual weight during picking.
 
 ## Upoading Weight Info
 
@@ -41,7 +41,7 @@ barcode,price,approx_weight,unit_in_weight,price_per_unit,variable
 
 ## Data Structure
 
-Internally, this is how the information is being store. Weigh info is kept as sub-document within the product document.
+Internally, this is how the information is stored. Weigh info is kept as sub-document of the product.
 
 ```json5
 {
@@ -59,7 +59,7 @@ Internally, this is how the information is being store. Weigh info is kept as su
 
 ## Mobile Client
 
-Mobile App is responsible to present the weight info the to user. When downloading or searching, weighted items will the weigh_info included as part of JSON.
+Mobile App is responsible to present the weight info the to user. When downloading or searching, weigh_info is included as part of JSON for weighted items.
 
 #### Fixed Price Item
 
@@ -122,41 +122,50 @@ See example below:
 Pickers submits the actual weight and final quantity.
 
 ```json5
-{   lines: [{
-        barcode: "111"
-        quantity: 1,
-        weight: 1.5
-    }]
+{
+  lines: [
+    {
+      barcode: "111",
+      quantity: 1,
+      weight: 1.5,
+    },
+  ],
 }
 ```
 
 Suki server recalculates the price based on the weight info.
 
 ```json5
-{   lines: [{
-        barcode: "111"
-        quantity: 1,
-        weight: 1.5,
-        weight_info: {
-            approx_weight: 1.4,
-            unit: "KG",
-            price_per_unit: 100
-            variable: true
-        },
-        price: 150
-    }]
+{
+  lines: [
+    {
+      barcode: "111",
+      quantity: 1,
+      weight: 1.5,
+      weight_info: {
+        approx_weight: 1.4,
+        unit: "KG",
+        price_per_unit: 100,
+        variable: true,
+      },
+      price: 150,
+    },
+  ],
 }
 ```
 
-If quantity is more than, picker can optionally provide a list of weights as shown in example below.
+If quantity is more than 1, picker can optionally provide a list of weights as shown in example below.
 
 ```json5
-{   lines: [{
-        barcode: "111"
-        quantity: 2,
-        weights: [1.3,1.4]
-        weight: 2.7
-    }]
+{
+  lines: [
+    {
+      barcode: "111",
+      quantity: 2,
+      weights: [1.3, 1.4],
+      weight: 2.7,
+    },
+  ],
 }
 ```
 
