@@ -1,5 +1,9 @@
 # Weighted Items
 
+_By Victor Javier, May 14, 2020_
+
+**\*DRAF - Proof Reading Needed\***
+
 Suki Commerce supports weighted items such as fresh produce in additional to regular items. User can store weight information such as `approx_weight`, `unit_in_weight`, and `price_per_unit`.
 
 There are two type of weighted items. One that has fixed price, and another price based on actual weight during picking.
@@ -61,15 +65,13 @@ Mobile App is responsible to present the weight info the to user. When downloadi
 
 Image 1. Below is sample screen showing how MetroMart App renders fixed price item.
 
-![Fixed Price](/images/weighted_fixed_price.jpg =200x)
+![Fixed Price](/images/weighted_fixed_price.jpg)
 
 #### Variable Price Item
 
 Image 2: Below is an example showing how Metromart App renders variable price item.
 
-![Variable Price](/images/weighted_variable_price.jpg =200x)
-
-<img src="/images/weighted_variable_price.jpg" alt="var price"/>
+![Variable Price](/images/weighted_variable_price.jpg)
 
 #### Submitting Order
 
