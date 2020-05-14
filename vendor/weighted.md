@@ -4,7 +4,7 @@ _By Victor Javier, May 14, 2020_
 
 **\*DRAF - Proof Reading Needed\***
 
-Suki Commerce supports weighted items such as fresh produce in additional to regular items. User can store weight information such as `approx_weight`, `weight_unit`, and `price_per_unit`.
+Suki Commerce supports weighted items such as fresh produce in additional to regular items. User can store weight information such as `approx_weight`, `unit_in_weight`, and `price_per_unit`.
 
 There are two type of weighted items. One is fixed price, and the other is variable price based on actual weight during picking.
 
@@ -26,7 +26,7 @@ Let say Marinated Chicken (barcode 111) is to be sold at fixed price of P140 per
 This is how your CSV file should look like.
 
 ```
-barcode,price,approx_weight,weight_unit,price_per_unit
+barcode,price,approx_weight,unit_in_weight,price_per_unit
 111,1.4,KG,100
 ```
 
@@ -35,7 +35,7 @@ barcode,price,approx_weight,weight_unit,price_per_unit
 If you would allow the price to be adjusted based on actual weight, all you need to do is to include another column `variable`.
 
 ```
-barcode,price,approx_weight,weight_unit,price_per_unit,variable
+barcode,price,approx_weight,unit_in_weight,price_per_unit,variable
 111,1.4,KG,100,true
 ```
 
@@ -50,7 +50,7 @@ Internally, this is how the information is stored. Weigh info is kept as sub-doc
     price: 140,
     weight_info: {
         approx_weight: 1.4,
-        weight_unit: "KG",
+        unit_in_weight: "KG",
         price_per_unit: 100,
         variable: false
     }
@@ -100,7 +100,7 @@ After submission:
         price: 140,
         weight_info: {
             approx_weight: 1.4,
-            weight_unit: "KG",
+            unit_in_weight: "KG",
             price_per_unit: 100,
             variable: true,
         }
@@ -145,7 +145,7 @@ Suki server recalculates the price based on the weight info.
       weight: 1.5,
       weight_info: {
         approx_weight: 1.4,
-        weight_unit: "KG",
+        unit_in_weight: "KG",
         price_per_unit: 100,
         variable: true,
       },
